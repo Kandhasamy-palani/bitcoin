@@ -85,4 +85,10 @@ public class BitcoinMainTest {
         Double value = coinBase.getRollingAveragebwDates(startDate, endDate);
         Assert.assertTrue(value.equals(15.25));
     }
+
+    @Test
+    public void testForecastPrices() {
+        List<Double> priceList = coinBase.foreCastPrices();
+        Assert.assertTrue(priceList.size() ==15);
+    }
 }

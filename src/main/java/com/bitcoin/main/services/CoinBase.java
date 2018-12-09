@@ -22,4 +22,6 @@ public interface CoinBase {
 
     String predictDecision(Date customFromDate, Date customEndDate);
 
+    List<Double> foreCastPrices();
+
 }

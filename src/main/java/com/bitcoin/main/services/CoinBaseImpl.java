@@ -134,6 +134,28 @@ public class CoinBaseImpl implements CoinBase{
         return predictDecision;
     }
 
+    @Override
+    public List<Double> foreCastPrices() {
+        Double lastPrice = null;
+        for(Map.Entry entry:prices.entrySet()) {
+            lastPrice = (Double)entry.getValue();
+        }
+        List<Double> lastMonthPrices = getLastMonthPrices();
+        OptionalDouble average = lastMonthPrices.stream().mapToDouble(a->a).average();
+        Double averagePrice = average.getAsDouble();
+        Double currentPrice = Double.valueOf(0.00);
+        List<Double> forecastPrices = new ArrayList<Double>();
+        for(int i=0; i<15 ; i++) {
+            if(i==0) {
+                currentPrice = averagePrice + lastPrice;
+            } else {
+                currentPrice = currentPrice+ averagePrice;
+            }
+            forecastPrices.add(currentPrice);
+        }
+
+        return forecastPrices;
+    }
 
     private List<Double> getPriceDatabwDate(Date startDate, Date endDate) {
         priceList = null;

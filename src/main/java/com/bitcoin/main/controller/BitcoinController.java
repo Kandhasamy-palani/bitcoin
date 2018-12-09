@@ -46,5 +46,11 @@ public class BitcoinController {
         return coinBase.predictDecision(dateFrom, dateTo);
     }
 
+    @RequestMapping(value = "/forecast", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Double> getForeCastPrices() {
+        return coinBase.foreCastPrices();
+    }
+
 
 }
