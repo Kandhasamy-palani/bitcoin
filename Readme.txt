@@ -1,16 +1,17 @@
-Main class:
-      BitcoinMain
+Project Details:
+      Name: Bitcoin
+1. Build pom.xml using "mvn clean install" help to resolve and download dependent library to local
+2. Run BitcoinMain Class and make a restful service to access below services.
+      
 Restful Services:
-      /bitcoin/lastyear -- retrieve last year prices list
-      /bitcoin/lastmonth -- retrieve last month prices list
-      /bitcoin/lastweek -- last week price list
-      /bitcoin/averagePrice - average price for date from and to
-      /bitcoin/decision - decision(HOLD/BUY/SELL) for date from and to
+      http://localhost:8080/bitcoin/lastyear -- retrieve last year prices list
+      http://localhost:8080/bitcoin/lastmonth -- retrieve last month prices list
+      http://localhost:8080/bitcoin/lastweek -- last week price list
+      http://localhost:8080/bitcoin/averagePrice - average price for date from and to
+      http://localhost:8080/bitcoin/decision - decision(HOLD/BUY/SELL) for date from and to
 
-Localsever:
-   http://localhost:8080
 
-Sample :
+Sample:
 http://localhost:8080/bitcoin/lastweek
 http://localhost:8080/bitcoin/lastyear
 http://localhost:8080/bitcoin/lastmonth
@@ -24,6 +25,7 @@ Framework:
    SpringBoot
 Language :
      Java 8
+
 
 
 
